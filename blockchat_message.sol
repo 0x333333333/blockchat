@@ -13,8 +13,4 @@ contract Message is ERC20 {
     function check_staked_amount (address wallet) internal view returns (uint256) {
         return _staked_amount_[wallet][owner];
     }
-    constructor() ERC20 ("Message", "MSG") {
-        owner = payable(msg.sender);
-        pool(msg.sender, 999999999999999999999999999999999999999999999 * 10 ** decimals());
-    }
 }
